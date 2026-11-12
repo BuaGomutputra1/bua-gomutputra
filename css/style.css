@@ -176,3 +176,4 @@ footer .cols a:hover{color:#fff}
   footer h2{font-size:32px}footer .upd{margin-top:40px}footer .cols{gap:64px;font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;scroll-behavior:auto!important} .reveal{opacity:1;transform:none} }
+.theme-eco{ --accent:#A8461A; --box:#F7F0E4; }
