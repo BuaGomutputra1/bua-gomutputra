@@ -327,6 +327,11 @@ figcaption,.figcap{font-size:14px;color:var(--soft);margin-top:12px}
 .ms-arrow{position:absolute;bottom:16px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(251,251,251,.9);font-size:22px;line-height:1;color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.12);transition:transform .2s}
 .ms-arrow:hover{transform:scale(1.1)}
 .ms-arrow.prev{right:64px}.ms-arrow.next{right:16px}
+.ms-line .ms-date{display:block;margin-top:-4px;font-family:var(--mono);font-size-adjust:.5;font-size:13px;color:var(--muted);white-space:nowrap}
+.ms-line button[aria-selected=true] .ms-date{color:var(--accent)}
+.ms-next{display:flex;gap:10px;align-items:baseline;margin-top:16px;font-size:15.5px;color:#5E5E5E}
+.ms-next b{font-family:var(--mono);font-size-adjust:.5;font-weight:400;font-size:14px;color:var(--accent)}
+.ms-next b::after{content:" →"}
 /* EcoPinet: logos, links, press, videos, hotel */
 .eco-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .eco-links a{font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;background:var(--lav);color:var(--accent);transition:background .2s,transform .2s}
@@ -787,7 +792,7 @@ footer .cols a:hover{color:#fff}
   .more-grid{grid-template-columns:1fr;gap:32px}.more{padding-bottom:72px}
   .goal-chips{grid-template-columns:1fr}
   .impact{grid-template-columns:1fr 1fr}.imp.big{grid-column:span 2;grid-row:auto;min-height:200px}
-  .ms-line button{font-size:12px}.ms-line .dot{width:34px;height:34px}.ms-track{top:16px}.ms-arrow{display:none}.ms-view figcaption{right:16px}
+  .ms-line button{font-size:12px}.ms-line .ms-date{font-size:10.5px;white-space:normal;line-height:1.2}.ms-line .dot{width:34px;height:34px}.ms-track{top:16px}.ms-arrow{display:none}.ms-view figcaption{right:16px}
   .panels{flex-direction:column;height:auto}.pp{min-height:120px;flex:none}.pp.on{min-height:430px}
   .paperstack{grid-template-columns:1fr;padding:20px;gap:24px}
   .app{grid-template-columns:1fr;padding:26px}.app-phones{height:400px}.aph{width:150px;height:322px;border-radius:26px}.aph.p2{margin-left:-75px}.ms-view{aspect-ratio:4/3}.ms-view figcaption{font-size:13.5px;padding:10px 12px}
