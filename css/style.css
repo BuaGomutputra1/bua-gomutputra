@@ -1293,6 +1293,7 @@ footer .cols a:hover{color:#fff}
 @media (max-width:760px){.slot .kind{right:8px;top:8px;font-size:11px;padding:4px 8px}}
 
 /* looping video tile (DuoPoker) */
-.slot .tile-vid{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:0}
+.slot .tile-vid{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:relative;z-index:0}
+.slot:has(.tile-vid){background:#fff}
 .slot:has(.tile-vid) .kind,.slot:has(.tile-vid) .tag{z-index:3}
 @media (prefers-reduced-motion:reduce){.slot .tile-vid{display:none}.slot:has(.tile-vid){background:url(../images/duolingo-poker/tile-table.jpg) center/cover}}
