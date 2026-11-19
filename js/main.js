@@ -647,3 +647,31 @@ if (av) {
     setTimeout(() => { sk.src = `images/buzztile/sketch-${i + 1}.jpg`; ph.src = `images/buzztile/screen-${i + 1}.jpg`; sk.alt = `Hand-drawn sketch of ${names[i]}`; ph.alt = `Final app: ${names[i]}`; stage.classList.remove('swap'); }, 220);
   }));
 }
+
+// Jim Thompson: colourway switcher
+const cw = document.querySelector('[data-cw]');
+const cwData = document.getElementById('cw-data');
+if (cw && cwData) {
+  const pats = JSON.parse(cwData.textContent), base = 'images/jim-thompson/cw/';
+  const tabs = cw.querySelector('.cw-tabs'), frame = cw.querySelector('.cw-frame'), img = frame.querySelector('img');
+  const nameEl = cw.querySelector('.cw-name'), descEl = cw.querySelector('.cw-desc'), sw = cw.querySelector('.cw-sw'), noteEl = cw.querySelector('.cw-note'), countEl = cw.querySelector('.cw-count');
+  const showSwatch = (p, i) => {
+    const src = base + p.files[i] + '.jpg';
+    img.classList.add('fade');
+    const pre = new Image(); pre.onload = pre.onerror = () => { img.src = src; img.alt = p.name + ' colourway ' + (i + 1); img.classList.remove('fade'); }; pre.src = src;
+    frame.classList.toggle('is-sel', i < (p.selected || 0));
+    [...sw.children].forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+  };
+  const showPattern = id => {
+    const p = pats.find(x => x.id === id);
+    [...tabs.children].forEach(b => b.setAttribute('aria-selected', b.dataset.p === id));
+    nameEl.textContent = p.name; descEl.textContent = p.desc; noteEl.textContent = p.note || '';
+    countEl.textContent = p.files.length + ' of 140+';
+    frame.classList.toggle('wide', !!p.wide);
+    sw.innerHTML = '';
+    p.files.forEach((f, i) => { const b = document.createElement('button'); b.type = 'button'; b.style.backgroundImage = `url(${base}${f}.jpg)`; b.setAttribute('aria-label', `${p.name} colourway ${i + 1}${i < (p.selected || 0) ? ', selected for 2026' : ''}`); if (i < (p.selected || 0)) b.classList.add('sel'); b.addEventListener('click', () => showSwatch(p, i)); sw.appendChild(b); });
+    showSwatch(p, 0);
+  };
+  pats.forEach(p => { const b = document.createElement('button'); b.type = 'button'; b.role = 'tab'; b.dataset.p = p.id; b.textContent = p.name; b.addEventListener('click', () => showPattern(p.id)); tabs.appendChild(b); });
+  showPattern(pats[0].id);
+}
