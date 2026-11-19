@@ -163,22 +163,7 @@ if (zoomables.length && matchMedia('(hover: hover)').matches && document.body.cl
   addEventListener('scroll', () => lens.classList.remove('on'), { passive: true });
 }
 
-// Project tiles: flower cursor grows into a "View <project>" pill (mouse only)
-const projTiles = document.querySelectorAll('a.slot, [data-pill]');
-if (projTiles.length && matchMedia('(hover: hover)').matches) {
-  document.documentElement.classList.add('has-pill');
-  const pill = document.createElement('div');
-  pill.className = 'cursor-pill';
-  pill.innerHTML = '<svg viewBox="0 0 108 136" aria-hidden="true"><path d="M53.92 0L78.64 24.87C85.53 31.77 95.15 40.48 100.04 48.56C105.12 56.9 107.79 66.48 107.75 76.24C107.75 95.6 99.93 106.57 87.05 119.51C76.57 106.2 65.65 94.19 54.08 81.89C49.85 86.4 43.97 93.4 39.67 97.36C12.93 122.06 47.2 135.72 69.83 135.47C36.01 136.21 -0.12 109.84 0 76.17C-0.01 66.63 2.54 57.27 7.38 49.06C12.44 40.46 22.52 31.4 29.78 24.15L53.92 0Z"/></svg><span></span>';
-  document.body.appendChild(pill);
-  const label = pill.querySelector('span');
-  addEventListener('pointermove', e => { pill.style.transform = `translate3d(${e.clientX - 9}px, ${e.clientY - 12}px, 0)`; }, { passive: true });
-  projTiles.forEach(t => {
-    const name = t.querySelector('.tag b')?.textContent || t.querySelector('img')?.alt || 'project';
-    t.addEventListener('pointerenter', () => { label.textContent = t.dataset.pill || ('View ' + name); pill.classList.add('on'); });
-    t.addEventListener('pointerleave', () => pill.classList.remove('on'));
-  });
-}
+// Project tiles: plain blue flower cursor on hover (set in CSS), no "View" pill
 
 // Tiles bounce in as they scroll into view
 const slots = document.querySelectorAll('.slot');
