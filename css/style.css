@@ -457,6 +457,10 @@ figcaption,.figcap{font-size:14px;color:var(--soft);margin-top:12px}
 .mosaic-4 img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .mosaic-4 img:nth-child(1){grid-row:span 2}
 .mosaic-4 img:nth-child(4){display:none}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:min(19vw,230px) min(19vw,230px);gap:12px;margin-top:28px}
+.comm-grid img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.comm-grid .big{grid-row:span 2}
+.comm-grid .wide{grid-column:span 2}
 .theme-eco .decisions div{border-color:rgba(63,125,46,.2)}
 
 /* EcoPinet impact v3: photo-led proof, quiet rows, one line of numbers */
@@ -797,6 +801,7 @@ footer .cols a:hover{color:#fff}
   .paperstack{grid-template-columns:1fr;padding:20px;gap:24px}
   .app{grid-template-columns:1fr;padding:26px}.app-phones{height:400px}.aph{width:150px;height:322px;border-radius:26px}.aph.p2{margin-left:-75px}.ms-view{aspect-ratio:4/3}.ms-view figcaption{font-size:13.5px;padding:10px 12px}
   .mosaic-4{grid-template-columns:1fr 1fr;grid-template-rows:200px 140px}
+  .comm-grid{grid-template-columns:1fr 1fr;grid-template-rows:none}.comm-grid img{height:auto;aspect-ratio:4/3}.comm-grid .big{grid-column:span 2;grid-row:auto;aspect-ratio:4/5}.comm-grid .wide{grid-column:span 2;aspect-ratio:16/8}
   .impact{grid-template-columns:1fr 1fr!important}
   .imp-hero{grid-template-columns:1fr;gap:20px}.imp-big{font-size:44px}.imp-hero-text p{max-width:none}.imp-row{grid-template-columns:112px 1fr;gap:16px}.imp-thumb{width:112px;height:84px}.imp-nums{grid-template-columns:1fr 1fr;row-gap:20px}.imp-nums div:nth-child(3){padding-left:0;border-left:0}
   .yt-grid{grid-template-columns:1fr!important}.team-row{grid-template-columns:1fr}.tr-side{grid-template-rows:auto auto}.tr-side img{aspect-ratio:4/3}
